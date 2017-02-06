@@ -1,0 +1,10 @@
+set.seed(5)
+d <- data.frame(x=1:100, y=rlnorm(100, meanlog=5, sdlog=3))
+with(d, {
+  plot(x, y, log="y", yaxt="n")
+  y1 <- floor(log10(range(y)))
+  pow <- seq(y1[1], y1[2]+1)
+  ticksat <- as.vector(sapply(pow, function(p) (1:10)*10^p))
+  axis(2, 10^pow)
+  axis(2, ticksat, labels=NA, tcl=-0.25, lwd=0, lwd.ticks=1)
+})
