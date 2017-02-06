@@ -2,7 +2,6 @@ require(jsonlite)
 require(RCurl)
 require(dplyr)
 require(ggplot2)
-source("~/Rscript/plotting/plotbubble")
 
 lollipop<-function(maf){
   
